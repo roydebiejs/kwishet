@@ -1,6 +1,6 @@
-import express from '../client/node_modules/@types/express';
+import express from 'express';
 import cors from 'cors';
-import bodyParser from '../client/node_modules/@types/body-parser';
+import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 
 dotenv.config();
