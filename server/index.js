@@ -18,11 +18,11 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.get("/api/", (req, res) => {
-  res.send({ data: "LALALAALALA!" });
+  res.send({ data: "Ik hou van jou" });
 });
 
 const port = process.env.PORT || 8080;
 
-const server = app.listen(port, () => {
+app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });
