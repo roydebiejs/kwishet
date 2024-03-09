@@ -18,7 +18,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.get("/api/", (req, res) => {
-  res.send({ data: "Ik hou van jou" });
+  res.send({ data: "Test 123" });
 });
 
 const port = process.env.PORT || 8080;
