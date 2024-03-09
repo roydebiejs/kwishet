@@ -10,6 +10,8 @@ services:
     volumes:
       - ./react:/app
       - /app/node_modules
+    environment:
+      - VITE_API_URL=${VITE_API_URL}
     networks:
       - app-network
 
@@ -24,9 +26,10 @@ services:
       - ./server:/app
       - /app/node_modules
     environment:
-      - HOST=${HOST}
+      - ORIGIN=${ORIGIN}
       - SERVERPORT=${SERVERPORT}
-      - CLIENTPORT=${CLIENTPORT}
+      - MONGO_DB=${MONGO_DB}
+      - DB_NAME=${DB_NAME}
     networks:
       - app-network
 

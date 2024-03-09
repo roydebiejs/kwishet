@@ -22,10 +22,10 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.get("/api/", (req, res) => {
-  res.send({ data: "Test 123" });
+  res.send({ data: "sdfsdfsfsdfsf" });
 });
 
-const port = process.env.PORT;
+const port = process.env.SERVERPORT;
 
 if (!port) {
   throw new Error("PORT is not defined");

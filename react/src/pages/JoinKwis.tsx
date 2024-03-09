@@ -1,12 +1,10 @@
 import Header from "../components/Header";
 
 export default function JoinKwis() {
-  const host = import.meta.env.REACT_APP_API_URL;
-
-  console.log(host);
+  const host = import.meta.env.VITE_API_URL;
 
   const join = async () => {
-    await fetch(host + "/api/")
+    await fetch(host + "/")
       .then((res) => res.json())
       .then((res) => {
         if (res) {

@@ -39,9 +39,6 @@ RUN npm install
 # copy the rest of the files to the working directory
 COPY . .
 
-ARG REACT_APP_API_URL
-ENV REACT_APP_API_URL $REACT_APP_API_URL
-
 # expose port 5173 to tell Docker that the container listens on the specified network ports at runtime
 EXPOSE 5173
 
