@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 
 dotenv.config();
-const host = process.env.HOST || "http://localhost:3000";
+const host = process.env.HOST || "http://localhost:5173";
 
 const app = express();
 
@@ -36,7 +36,7 @@ app.get("/api/", (req, res) => {
   res.send({ data: "Hello from Express!" });
 });
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 8686;
 
 const server = app.listen(port, () => {
   console.log(`Server started on port ${port}`);

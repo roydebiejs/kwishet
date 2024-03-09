@@ -36,6 +36,10 @@ USER app
 # install dependencies
 RUN npm install
 
+ARG PROXY
+
+ENV PROXY=http://localhost:8686
+
 # copy the rest of the files to the working directory
 COPY . .
 
