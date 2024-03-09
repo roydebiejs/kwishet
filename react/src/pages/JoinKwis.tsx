@@ -1,9 +1,12 @@
 import Header from "../components/Header";
 
 export default function JoinKwis() {
-  const proxy = "http://localhost:8080";
+  const host = import.meta.env.REACT_APP_API_URL;
+
+  console.log(host);
+
   const join = async () => {
-    await fetch(proxy + "/api/")
+    await fetch(host + "/api/")
       .then((res) => res.json())
       .then((res) => {
         if (res) {

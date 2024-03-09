@@ -6,7 +6,7 @@ services:
       context: ./react
       dockerfile: Dockerfile
     ports:
-      - "5173:5173"
+      - "${CLIENTPORT}:${CLIENTPORT}"
     volumes:
       - ./react:/app
       - /app/node_modules
@@ -19,10 +19,14 @@ services:
       context: ./server
       dockerfile: Dockerfile
     ports:
-      - "8080:8080"
+      - "${SERVERPORT}:${SERVERPORT}"
     volumes:
       - ./server:/app
       - /app/node_modules
+    environment:
+      - HOST=${HOST}
+      - SERVERPORT=${SERVERPORT}
+      - CLIENTPORT=${CLIENTPORT}
     networks:
       - app-network
 
