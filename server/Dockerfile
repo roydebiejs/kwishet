@@ -36,11 +36,11 @@ USER app
 # install dependencies
 RUN npm install
 
-# copy the rest of the files to the working directory
+# Copy local code to the container image.
 COPY . .
 
-# expose port 5173 to tell Docker that the container listens on the specified network ports at runtime
-EXPOSE 5173
+# expose port 8080 to tell Docker that the container listens on the specified network ports at runtime
+EXPOSE 8080
 
 # command to run the app
-CMD npm run dev
+CMD npm run start

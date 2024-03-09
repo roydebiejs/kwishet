@@ -2,30 +2,15 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
-import mongoose from "mongoose";
 
 dotenv.config();
-const host = process.env.HOST || "http://localhost:5173";
-
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-mongoose
-  .connect(process.env.MONGO_DB, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => {
-    console.log("Connected to MongoDB");
-  })
-  .catch((err) => {
-    console.log("Error connecting to MongoDB", err);
-  });
-
 const corsOptions = {
-  origin: host,
+  origin: "http://localhost:5173",
   credentials: true,
   optionsSuccessStatus: 200,
 };
@@ -33,10 +18,10 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.get("/api/", (req, res) => {
-  res.send({ data: "Hello from Express!" });
+  res.send({ data: "LALALAALALA!" });
 });
 
-const port = process.env.PORT || 8686;
+const port = process.env.PORT || 8080;
 
 const server = app.listen(port, () => {
   console.log(`Server started on port ${port}`);
