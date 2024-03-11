@@ -22,7 +22,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.get("/api/", (req, res) => {
-  res.send({ data: "sdfsdfsfsdfsf" });
+  res.send({ data: "CODE:AABCCD" });
 });
 
 const port = process.env.SERVERPORT;
